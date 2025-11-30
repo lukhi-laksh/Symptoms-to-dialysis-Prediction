@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Disease Prediction With Symptoms</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="app">
+      <section class="card">
+        <header>
+          <p class="eyebrow">AI Triage Assistant</p>
+          <h1>Disease Prediction With Symptoms</h1>
+          <p class="subhead">
+            Enter symptoms in your own words. Gemini will suggest possible
+            conditions and next steps. This is not medical advice; consult a
+            professional for diagnosis or treatment.
+          </p>
+        </header>
+
+        <form id="symptom-form">
+          <label for="symptoms">Describe your symptoms</label>
+          <textarea
+            id="symptoms"
+            name="symptoms"
+            rows="6"
+            placeholder="Example: Persistent cough, mild fever, chest tightness for 4 days..."
+            required
+          ></textarea>
+          <button type="submit" id="submit-btn">Predict</button>
+        </form>
+
+        <section id="results" aria-live="polite">
+          <p class="placeholder">
+            Predictions will appear here with likely conditions, severity, and
+            recommended follow-up actions.
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <template id="result-template">
+      <article class="result-card">
+        <div class="result-header">
+          <h2>Possible Conditions</h2>
+          <p class="timestamp"></p>
+        </div>
+        <div class="result-body"></div>
+      </article>
+    </template>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
+
